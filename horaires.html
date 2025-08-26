@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horaires - SPCOC Handball</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --rouge-spcoc: #e30613;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+
+    header {
+      background-color: white;
+      color: var(--rouge-spcoc);
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border-bottom: 3px solid var(--rouge-spcoc);
+    }
+
+    header img {
+      position: absolute;
+      left: 20px;
+      max-height: 60px;
+      height: auto;
+      width: auto;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      color: var(--rouge-spcoc);
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 12px;
+      text-align: center;
+    }
+
+    th {
+      background-color: var(--rouge-spcoc);
+      color: white;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 40px;
+      color: #777;
+      font-size: 0.9em;
+    }
+
+    /* TABLEAU RESPONSIVE */
+    @media (max-width: 768px) {
+      table, thead, tbody, th, td, tr {
+        display: block;
+      }
+
+      thead {
+        display: none;
+      }
+
+      tr {
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #fff;
+      }
+
+      td {
+        text-align: left;
+        padding: 10px;
+        border: none;
+        position: relative;
+      }
+
+      td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        display: block;
+        margin-bottom: 5px;
+        color: var(--rouge-spcoc);
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="logo.png" alt="Logo SPCOC Handball">
+    <h1>SPCOC Handball 2025–2026</h1>
+  </header>
+
+  <main>
+    <table>
+      <thead>
+        <tr>
+          <th>Catégorie</th>
+          <th>Années</th>
+          <th>Horaires et Lieux</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td data-label="Catégorie">Baby</td>
+          <td data-label="Années">2020-2023</td>
+          <td data-label="Horaires et Lieux"><b>Samedi 9h00-9h45</b> Gymnase La Colle</td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U9</td>
+          <td data-label="Années">2017-2019</td>
+          <td data-label="Horaires et Lieux"><b>Samedi 9h30-10h45</b> Gymnase La Colle</td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U11 F/G</td>
+          <td data-label="Années">2015-2016</td>
+          <td data-label="Horaires et Lieux">
+            <b>Mardi 17h-18h15</b> Gymnase La Colle<br>
+            <b>Samedi 10h45-12h00</b> Gymnase La Colle
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U13 F</td>
+          <td data-label="Années">2013-2014</td>
+          <td data-label="Horaires et Lieux"><b>Convention Cagnes sur mer – HORAIRES À DÉFINIR</b></td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U13 G</td>
+          <td data-label="Années">2013-2014</td>
+          <td data-label="Horaires et Lieux">
+            <b>Mardi 18h15-19h30</b> Gymnase La Colle<br>
+            <b>Jeudi 18h15-19h30</b> Gymnase Vence (Entente)
+          </td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U15 G</td>
+          <td data-label="Années">2011-2012</td>
+          <td data-label="Horaires et Lieux"><b>Entente Vence – HORAIRES À DÉFINIR</b></td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">Loisirs</td>
+          <td data-label="Années">18+ ans</td>
+          <td data-label="Horaires et Lieux"><b>Mardi 20h00-21h15</b> Gymnase La Colle</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <!-- Encart École d'arbitrage -->
+    <div style="background-color: #fff3f3; border-left: 5px solid var(--rouge-spcoc); padding: 15px; margin: 20px 0; border-radius: 6px;">
+      <h3 style="margin-top: 0; color: var(--rouge-spcoc);">
+        <img src="sifflet.png" alt="Sifflet" style="height: 20px; vertical-align: middle; margin-right: 8px;">
+        École d'arbitrage
+      </h3>
+      <p style="margin: 0;">
+        <strong>L'école d’arbitrage</strong> est mise en place à partir de la catégorie <strong>U11</strong> pour sensibiliser et former les jeunes à l’arbitrage. 
+        Une belle opportunité pour mieux comprendre le jeu et développer son esprit de responsabilité !
+      </p>
+    </div>
+
+    <!-- Encart Contact -->
+    <div style="background-color: #ffffff; border: 2px solid var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 600px;">
+      <h3 style="color: var(--rouge-spcoc); font-size: 1.4em; margin-top: 0;">
+        📬 Contactez-nous
+      </h3>
+      <p style="font-size: 1em; color: #444; margin-bottom: 10px;">
+        Une question ? Besoin d'informations ? Vous pourrez nous retrouver sur le <strong>forum des associations</strong> à <strong>La Colle sur Loup</strong> le <strong>samedi 06 septembre 2025</strong> ! 
+        Ou par email : <a href="mailto:handball.spcoc@gmail.com">handball.spcoc@gmail.com</a>
+      </p>
+    </div>
+  </main>
+
+  <footer>
+    © 2025 SPCOC Handball – Tous droits réservés.
+  </footer>
+
+</body>
+</html>
