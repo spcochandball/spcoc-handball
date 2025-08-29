@@ -43,7 +43,7 @@
     }
 
     main {
-      max-width: 800px;
+      max-width: 900px;
       margin: 30px auto;
       background-color: white;
       padding: 20px;
@@ -51,22 +51,58 @@
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
+    /* TABLEAU STYLISÉ */
     table {
       width: 100%;
-      border-collapse: collapse;
+      border-collapse: separate;
+      border-spacing: 0;
       margin-top: 20px;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     th, td {
-      border: 1px solid #ccc;
-      padding: 12px;
+      padding: 14px 12px;
       text-align: center;
     }
 
     th {
-      background-color: var(--rouge-spcoc);
+      background: linear-gradient(135deg, var(--rouge-spcoc), #b90510);
       color: white;
+      font-size: 1em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
     }
+
+    tbody tr:nth-child(even) {
+      background-color: #fafafa;
+    }
+
+    tbody tr:nth-child(odd) {
+      background-color: #fff;
+    }
+
+    tbody tr:hover {
+      background-color: #ffecec;
+      transition: background-color 0.2s ease-in-out;
+    }
+
+    td {
+      border-bottom: 1px solid #eee;
+      font-size: 0.95em;
+      line-height: 1.4;
+    }
+
+    td b {
+      color: var(--rouge-spcoc);
+    }
+
+    /* Colonnes mieux équilibrées */
+    td[data-label="Catégorie"] { width: 15%; font-weight: 600; }
+    td[data-label="Années"] { width: 15%; }
+    td[data-label="Horaires et Lieux"] { width: 50%; text-align: left; }
+    td[data-label="Tarif"] { width: 20%; font-weight: 600; color: var(--rouge-spcoc); }
 
     footer {
       text-align: center;
@@ -131,21 +167,21 @@
         <tr>
           <td data-label="Catégorie">Baby</td>
           <td data-label="Années">2020-2023</td>
-          <td data-label="Horaires et Lieux"><b>Samedi 9h00-9h45</b> Gymnase La Colle</td>
+          <td data-label="Horaires et Lieux"><b>Samedi 9h00-9h45</b> – Gymnase La Colle</td>
           <td data-label="Tarif">140 €</td>
         </tr>
         <tr>
           <td data-label="Catégorie">U9</td>
           <td data-label="Années">2017-2019</td>
-          <td data-label="Horaires et Lieux"><b>Samedi 9h30-10h45</b> Gymnase La Colle</td>
+          <td data-label="Horaires et Lieux"><b>Samedi 9h30-10h45</b> – Gymnase La Colle</td>
           <td data-label="Tarif">170 €</td>
         </tr>
         <tr>
           <td data-label="Catégorie">U11 F/G</td>
           <td data-label="Années">2015-2016</td>
           <td data-label="Horaires et Lieux">
-            <b>Mardi 17h-18h15</b> Gymnase La Colle<br>
-            <b>Samedi 10h45-12h00</b> Gymnase La Colle
+            <b>Mardi 17h-18h15</b> – Gymnase La Colle<br>
+            <b>Samedi 10h45-12h00</b> – Gymnase La Colle
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -153,10 +189,10 @@
           <td data-label="Catégorie">U13 F Convention US Cagnes</td>
           <td data-label="Années">2013-2014</td>
           <td data-label="Horaires et Lieux">
-            <b>Equipe 1 et 2 : Lundi 17h45-19h15</b>Gymnase Besson<br>
-            <b>Equipe 1 : Mercredi 15h-16h30</b>Gymnase Sauvaigo<br>
-            <b>Equipe 2 : Mercredi 18h-19h30</b>Gymnase Vence<br>
-            <b>Equipe 1 et 2 : Vendredi 17h45-19h15</b>Gymnase Besson<br>
+            <b>Équipe 1 & 2 : Lundi 17h45-19h15</b> – Gymnase Besson<br>
+            <b>Équipe 1 : Mercredi 15h-16h30</b> – Gymnase Sauvaigo<br>
+            <b>Équipe 2 : Mercredi 18h-19h30</b> – Gymnase Vence<br>
+            <b>Équipe 1 & 2 : Vendredi 17h45-19h15</b> – Gymnase Besson
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -164,8 +200,8 @@
           <td data-label="Catégorie">U13 G</td>
           <td data-label="Années">2013-2014</td>
           <td data-label="Horaires et Lieux">
-            <b>Mardi 18h15-19h30</b> Gymnase La Colle<br>
-            <b>Jeudi 18h15-19h30</b> Gymnase Vence (Entente)
+            <b>Mardi 18h15-19h30</b> – Gymnase La Colle<br>
+            <b>Jeudi 18h15-19h30</b> – Gymnase Vence (Entente)
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -173,12 +209,12 @@
           <td data-label="Catégorie">U15 F Convention US Cagnes</td>
           <td data-label="Années">2011-2012</td>
           <td data-label="Horaires et Lieux">
-            <b>Equipe 1 : Lundi 19h15-20h30</b>Gymnase Besson<br>
-            <b>Equipe 1 : Mercredi 18h-19h30</b>Gymnase Sauvaigo<br>
-            <b>Equipe 1 : Vendredi 19h-20h30</b>Gymnase Sauvaigo<br>
-            <b>Equipe 2 : Lundi 17h45-19h15</b>Gymnase Besson<br>
-            <b>Equipe 2 : Mercredi 18h-19h30</b>Gymnase Vence<br>
-            <b>Equipe 2 : Vendredi 17h45-19h15</b>Gymnase Besson<br>
+            <b>Équipe 1 : Lundi 19h15-20h30</b> – Gymnase Besson<br>
+            <b>Équipe 1 : Mercredi 18h-19h30</b> – Gymnase Sauvaigo<br>
+            <b>Équipe 1 : Vendredi 19h-20h30</b> – Gymnase Sauvaigo<br>
+            <b>Équipe 2 : Lundi 17h45-19h15</b> – Gymnase Besson<br>
+            <b>Équipe 2 : Mercredi 18h-19h30</b> – Gymnase Vence<br>
+            <b>Équipe 2 : Vendredi 17h45-19h15</b> – Gymnase Besson
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -186,14 +222,15 @@
           <td data-label="Catégorie">U15 G</td>
           <td data-label="Années">2011-2012</td>
           <td data-label="Horaires et Lieux">
-            <b>Mardi 18h45-20h00</b> Gymnase La Colle<br>
-            <b>Jeudi 19h30-20h45</b> Gymnase Vence (Entente)</td>
+            <b>Mardi 18h45-20h00</b> – Gymnase La Colle<br>
+            <b>Jeudi 19h30-20h45</b> – Gymnase Vence (Entente)
+          </td>
           <td data-label="Tarif">190 €</td>
         </tr>
         <tr>
           <td data-label="Catégorie">Loisirs</td>
           <td data-label="Années">18+ ans</td>
-          <td data-label="Horaires et Lieux"><b>Mardi 20h00-21h15</b> Gymnase La Colle</td>
+          <td data-label="Horaires et Lieux"><b>Mardi 20h00-21h15</b> – Gymnase La Colle</td>
           <td data-label="Tarif">140 €</td>
         </tr>
       </tbody>
@@ -211,7 +248,7 @@
       </p>
     </div>
 
-        <!-- Bloc Inscription -->
+    <!-- Bloc Inscription -->
     <div style="background-color: #fefefe; border: 2px dashed var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 600px;">
       <h3 style="color: var(--rouge-spcoc); font-size: 1.4em; margin-top: 0;">
         📝 Inscription
@@ -226,20 +263,4 @@
     </div>
 
     <!-- Encart Contact -->
-    <div style="background-color: #ffffff; border: 2px solid var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 600px;">
-      <h3 style="color: var(--rouge-spcoc); font-size: 1.4em; margin-top: 0;">
-        📬 Contactez-nous
-      </h3>
-      <p style="font-size: 1em; color: #444; margin-bottom: 10px;">
-        Une question ? Besoin d'informations ? Vous pourrez nous retrouver sur le <strong>forum des associations</strong> à <strong>La Colle sur Loup</strong> le <strong>samedi 06 septembre 2025</strong> ! 
-        Ou par email : <a href="mailto:handball.spcoc@gmail.com">handball.spcoc@gmail.com</a>
-      </p>
-    </div>
-  </main>
-
-  <footer>
-    © 2025 SPCOC Handball – Tous droits réservés.
-  </footer>
-
-</body>
-</html>
+    <div style="background-color: #ffffff; border: 2px solid var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,
