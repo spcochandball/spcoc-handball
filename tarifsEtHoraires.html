@@ -147,34 +147,111 @@
     }
 
     .bloc-container {
-  display: flex;
-  justify-content: center;
-  gap: 20px;
-  flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
-  margin: 30px auto;
-}
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
+      margin: 30px auto;
+    }
+    
+    .bloc {
+      background-color: #fff;
+      border: 1px solid var(--rouge-spcoc);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      flex: 1 1 300px; /* Largeur flexible, min 300px */
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      max-width: 400px;
+    }
+    
+    .bloc h3 {
+      color: var(--rouge-spcoc);
+      margin-top: 0;
+    }
+    
+    .bloc-inscription img {
+      max-width: 120px;
+      height: auto;
+      margin: 10px auto;
+      display: block;
+    }
+    /* Styles spécifiques à l'impression */
+@media print {
+  @page {
+    size: A4;
+    margin: 10mm;
+  }
 
-.bloc {
-  background-color: #fff;
-  border: 1px solid var(--rouge-spcoc);
-  padding: 20px;
-  border-radius: 8px;
-  text-align: center;
-  flex: 1 1 300px; /* Largeur flexible, min 300px */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-  max-width: 400px;
-}
+  body {
+    background: white !important;
+    color: black;
+    font-size: 12px;
+    margin: 0;
+  }
 
-.bloc h3 {
-  color: var(--rouge-spcoc);
-  margin-top: 0;
-}
+  header, footer {
+    border: none;
+    box-shadow: none;
+    text-align: center;
+    height: auto;
+  }
 
-.bloc-inscription img {
-  max-width: 120px;
-  height: auto;
-  margin: 10px auto;
-  display: block;
+  header img {
+    max-height: 40px;
+    left: 0;
+  }
+
+  header h1 {
+    font-size: 1.4em;
+  }
+
+  main {
+    max-width: 100%;
+    margin: 0;
+    padding: 5px;
+    box-shadow: none;
+  }
+
+  table {
+    font-size: 11px;
+    margin: 10px 0;
+  }
+
+  th, td {
+    padding: 6px;
+  }
+
+  .bloc-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 10px 0;
+  }
+
+  .bloc {
+    flex: 1 1 auto;
+    max-width: 48%;
+    padding: 10px;
+    font-size: 11px;
+    box-shadow: none;
+  }
+
+  .bloc h3 {
+    font-size: 1em;
+    margin: 5px 0;
+  }
+
+  .bloc-inscription img {
+    max-width: 80px;
+  }
+
+  /* Supprimer les couleurs d'arrière-plan pour économiser de l'encre */
+  * {
+    background: transparent !important;
+    box-shadow: none !important;
+  }
 }
   </style>
 </head>
