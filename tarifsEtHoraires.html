@@ -176,7 +176,8 @@
       margin: 10px auto;
       display: block;
     }
-    /* Styles spécifiques à l'impression */
+    
+/* Styles spécifiques à l'impression */
 @media print {
   @page {
     size: A4;
@@ -188,6 +189,8 @@
     color: black;
     font-size: 12px;
     margin: 0;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   header, footer {
@@ -216,10 +219,18 @@
   table {
     font-size: 11px;
     margin: 10px 0;
+    border: 1px solid #ccc;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   th, td {
     padding: 6px;
+  }
+
+  th {
+    background: var(--rouge-spcoc) !important;
+    color: white !important;
   }
 
   .bloc-container {
@@ -235,22 +246,28 @@
     max-width: 48%;
     padding: 10px;
     font-size: 11px;
-    box-shadow: none;
+    border: 1px solid var(--rouge-spcoc);
+    border-radius: 6px;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 
   .bloc h3 {
     font-size: 1em;
     margin: 5px 0;
+    color: var(--rouge-spcoc);
   }
 
   .bloc-inscription img {
     max-width: 80px;
   }
 
-  /* Supprimer les couleurs d'arrière-plan pour économiser de l'encre */
-  * {
-    background: transparent !important;
-    box-shadow: none !important;
+  /* Garder l'encart "informations diverses" coloré */
+  .info-encart {
+    background-color: #fff3f3 !important;
+    border-left: 5px solid var(--rouge-spcoc) !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
 }
   </style>
