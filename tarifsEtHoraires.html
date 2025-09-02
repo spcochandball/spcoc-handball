@@ -178,17 +178,19 @@
     }
     
 /* Styles spécifiques à l'impression */
+/* Styles spécifiques à l'impression */
 @media print {
   @page {
     size: A4;
-    margin: 10mm;
+    margin: 15mm; /* marges plus larges */
   }
 
   body {
     background: white !important;
     color: black;
-    font-size: 12px;
+    font-size: 13px; /* un peu plus lisible */
     margin: 0;
+    line-height: 1.4;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
@@ -198,76 +200,90 @@
     box-shadow: none;
     text-align: center;
     height: auto;
+    margin-bottom: 15px;
   }
 
   header img {
-    max-height: 40px;
-    left: 0;
+    max-height: 60px; /* logo plus grand */
+    margin-right: 10px;
   }
 
   header h1 {
-    font-size: 1.4em;
+    font-size: 1.6em;
+    margin: 0;
+    display: inline-block;
+    vertical-align: middle;
   }
 
   main {
     max-width: 100%;
     margin: 0;
-    padding: 5px;
+    padding: 15px; /* plus d’air autour du contenu */
     box-shadow: none;
   }
 
   table {
-    font-size: 11px;
-    margin: 10px 0;
+    font-size: 12px;
+    margin: 20px 0;
     border: 1px solid #ccc;
+    border-radius: 6px;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
   th, td {
-    padding: 6px;
+    padding: 8px 10px; /* plus d’espace dans les cellules */
   }
 
   th {
     background: var(--rouge-spcoc) !important;
     color: white !important;
+    font-size: 1em;
   }
 
   .bloc-container {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    gap: 10px;
-    margin: 10px 0;
+    gap: 15px;
+    margin: 20px 0;
   }
 
   .bloc {
     flex: 1 1 auto;
     max-width: 48%;
-    padding: 10px;
-    font-size: 11px;
+    padding: 15px; /* plus de respiration */
+    font-size: 12px;
     border: 1px solid var(--rouge-spcoc);
-    border-radius: 6px;
+    border-radius: 8px;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
   }
 
   .bloc h3 {
-    font-size: 1em;
-    margin: 5px 0;
+    font-size: 1.2em;
+    margin: 10px 0;
     color: var(--rouge-spcoc);
   }
 
   .bloc-inscription img {
-    max-width: 80px;
+    max-width: 100px;
+    margin-top: 10px;
   }
 
-  /* Garder l'encart "informations diverses" coloré */
+  /* Encart "informations diverses" */
   .info-encart {
     background-color: #fff3f3 !important;
     border-left: 5px solid var(--rouge-spcoc) !important;
+    padding: 12px;
+    margin: 20px 0;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
+  }
+
+  footer {
+    margin-top: 20px;
+    font-size: 11px;
   }
 }
   </style>
