@@ -145,6 +145,37 @@
         color: var(--rouge-spcoc);
       }
     }
+
+    .bloc-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
+  margin: 30px auto;
+}
+
+.bloc {
+  background-color: #fff;
+  border: 1px solid var(--rouge-spcoc);
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  flex: 1 1 300px; /* Largeur flexible, min 300px */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+  max-width: 400px;
+}
+
+.bloc h3 {
+  color: var(--rouge-spcoc);
+  margin-top: 0;
+}
+
+.bloc-inscription img {
+  max-width: 120px;
+  height: auto;
+  margin: 10px auto;
+  display: block;
+}
   </style>
 </head>
 <body>
@@ -229,6 +260,31 @@
       </tbody>
     </table>
 
+    <!-- Conteneur flex -->
+    <div class="bloc-container">
+    <!-- Bloc Inscription compact -->
+    <div class="bloc bloc-inscription">
+      <h3>
+        📝 Inscription
+      </h3>
+      <p>
+        Scannez le QR code pour accéder au formulaire :
+      </p>
+      <img src="qr_code_inscription.png" alt="QR Code inscription">
+    </div>
+    
+    <!-- Encart Contact -->
+    <div class="bloc bloc-contact">
+      <h3>
+        📬 Contactez-nous
+      </h3>
+      <p>
+        Une question ? Besoin d'informations ? Vous pourrez nous contacter par email :
+        <a href="mailto:handball.spcoc@gmail.com">handball.spcoc@gmail.com</a>
+      </p>
+    </div>
+    </div>
+    
     <!-- Bloc Inscription compact -->
     <div style="background-color: #fff; border: 1px solid var(--rouge-spcoc); padding: 12px; margin: 20px auto; border-radius: 8px; text-align: center; max-width: 450px; font-size: 0.9em;">
       <h3 style="color: var(--rouge-spcoc); font-size: 1.1em; margin: 5px 0;">
