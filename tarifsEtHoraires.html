@@ -238,25 +238,25 @@
     font-size: 1.05em;
   }
 
-  /* ⚡ Forcer les blocs à rester côte à côte */
   .bloc-container {
-    display: table !important;
-    width: 100%;
-    table-layout: fixed;
-    margin: 25px 0;
-  }
+  display: table !important;
+  width: 100%;
+  table-layout: fixed;
+  margin: 25px 0;
+  border-spacing: 15px; /* ✅ espace horizontal/vertical entre les blocs */
+}
 
-  .bloc {
-    display: table-cell !important;
-    width: 50%;
-    vertical-align: top;
-    padding: 16px;
-    font-size: 12.5px;
-    border: 1px solid var(--rouge-spcoc);
-    border-radius: 8px;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
+.bloc {
+  display: table-cell !important;
+  width: 50%;
+  vertical-align: top;
+  padding: 16px;
+  font-size: 12.5px;
+  border: 1px solid var(--rouge-spcoc);
+  border-radius: 8px;
+  -webkit-print-color-adjust: exact !important;
+  print-color-adjust: exact !important;
+}
 
   .bloc h3 {
     font-size: 1.2em;
