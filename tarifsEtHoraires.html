@@ -103,7 +103,7 @@
     td[data-label="Horaires et Lieux"] { width: 55%; text-align: left; }
     td[data-label="Tarif"] { width: 15%; font-weight: 600; color: var(--rouge-spcoc); }
 
-    /* BADGE CONVENTION CENTRÉ */
+    /* BADGES CONVENTION CENTRÉS (ÉCRAN) */
     .badge-convention {
       display: block;
       text-align: center;
@@ -120,7 +120,6 @@
       max-width: 220px;
     }
 
-    /* BADGE CONVENTION CENTRÉ */
     .badge-convention-colle {
       display: block;
       text-align: center;
@@ -153,7 +152,6 @@
       max-width: 220px;
     }
 
-
     ul {
       margin: 0;
       padding-left: 20px;
@@ -163,11 +161,12 @@
       margin-bottom: 5px;
     }
 
+    /* ENCART INFORMATIONS DIVERSES */
     .info-encart {
       background-color: #fff3f3; 
       border-left: 5px solid var(--rouge-spcoc); 
       padding: 15px; 
-      margin: 20px 0; 
+      margin: 35px 0; /* Augmentation de la marge (haut/bas) sur écran */
       border-radius: 6px;
     }
 
@@ -232,7 +231,7 @@
       tr { margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #fff; }
       td { text-align: left; padding: 8px 5px; border: none; position: relative; width: 100% !important; }
       td::before { content: attr(data-label) " : "; font-weight: 600; color: var(--rouge-spcoc); }
-      .badge-convention { margin: 5px 0; max-width: 100%; text-align: left; border: none; background: none; color: var(--rouge-spcoc); padding: 0; }
+      .badge-convention, .badge-convention-colle, .badge-convention-vence { margin: 5px 0; max-width: 100%; text-align: left; border: none; background: none; padding: 0; }
     }
 
     /* ==========================================
@@ -292,22 +291,45 @@
         color: white !important;
       }
 
-      /* Style du badge centré à l'impression */
-      .badge-convention {
-        background-color: #fff0f0 !important;
-        border: 1px solid var(--rouge-spcoc) !important;
-        color: var(--rouge-spcoc) !important;
+      /* STRUCTURE DES BADGES FORCÉE POUR L'IMPRESSION COULEUR */
+      .badge-convention, .badge-convention-colle, .badge-convention-vence {
+        display: block !important;
         font-size: 0.8em;
         padding: 2px 6px;
         margin: 0 auto 5px auto;
         max-width: 180px;
+        text-align: center !important;
+        -webkit-print-color-adjust: exact !important; /* Force le rendu de la couleur sur Webkit/Chrome/Safari */
+        print-color-adjust: exact !important;         /* Force le rendu standard */
       }
 
+      .badge-convention {
+        background-color: #f0f2ff !important;
+        border: 1px solid #000066 !important;
+        color: #000066 !important;
+      }
+
+      .badge-convention-colle {
+        background-color: #fff0f0 !important;
+        border: 1px solid var(--rouge-spcoc) !important;
+        color: var(--rouge-spcoc) !important;
+      }
+
+      .badge-convention-vence {
+        background-color: #fffde6 !important;
+        border: 1px solid #2c3272 !important;
+        color: #2c3272 !important;
+      }
+
+      /* AUGMENTATION DE LA MARGE DU BLOC INFO À L'IMPRESSION */
       .info-encart {
-        margin: 6px 0;
+        margin: 15px 0; /* Plus d'espace sous le tableau et au-dessus des blocs */
         padding: 8px 12px;
         font-size: 10px;
         box-shadow: none !important;
+        background-color: #fff3f3 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
       
       .info-encart h3 {
