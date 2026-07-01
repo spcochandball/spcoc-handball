@@ -21,43 +21,33 @@
     header {
       background-color: white;
       color: var(--rouge-spcoc);
-      height: 80px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      gap: 20px;
       border-bottom: 3px solid var(--rouge-spcoc);
     }
 
-    
-    li {
-      list-style-type: none;
-      padding-left: 0;
-      margin-left: 12;
-    }
-
-
     header img {
-      position: absolute;
-      left: 20px;
-      max-height: 60px;
+      max-height: 70px;
       height: auto;
       width: auto;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 1.8em;
       color: var(--rouge-spcoc);
     }
 
     main {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 950px;
+      margin: 20px auto;
       background-color: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     /* TABLEAU STYLISÉ */
@@ -65,21 +55,21 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      margin-top: 20px;
+      margin-top: 10px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     th, td {
-      padding: 14px 12px;
+      padding: 12px 10px;
       text-align: center;
     }
 
     th {
       background: var(--rouge-spcoc);
       color: white;
-      font-size: 1em;
+      font-size: 0.95em;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -94,7 +84,7 @@
 
     tbody tr:hover {
       background-color: #ffecec;
-      transition: background-color 0.2s ease-in-out;
+      transition: background-color 0.1s ease-in-out;
     }
 
     td {
@@ -107,201 +97,198 @@
       color: var(--black);
     }
 
-    /* Colonnes mieux équilibrées */
+    /* Colonnes équilibrées */
     td[data-label="Catégorie"] { width: 15%; font-weight: 600; }
     td[data-label="Années"] { width: 15%; }
-    td[data-label="Horaires et Lieux"] { width: 50%; text-align: left; }
-    td[data-label="Tarif"] { width: 20%; font-weight: 600; color: var(--rouge-spcoc); }
+    td[data-label="Horaires et Lieux"] { width: 55%; text-align: left; }
+    td[data-label="Tarif"] { width: 15%; font-weight: 600; color: var(--rouge-spcoc); }
 
-    footer {
-      text-align: center;
-      margin-top: 40px;
-      color: #777;
-      font-size: 0.9em;
+    ul {
+      margin: 0;
+      padding-left: 20px;
     }
 
-    /* TABLEAU RESPONSIVE */
-    @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
-      }
-
-      thead {
-        display: none;
-      }
-
-      tr {
-        margin-bottom: 15px;
-        border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: #fff;
-      }
-
-      td {
-        text-align: left;
-        padding: 10px;
-        border: none;
-        position: relative;
-      }
-
-      td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        display: block;
-        margin-bottom: 5px;
-        color: var(--rouge-spcoc);
-      }
+    li {
+      margin-bottom: 5px;
     }
 
+    .info-encart {
+      background-color: #fff3f3; 
+      border-left: 5px solid var(--rouge-spcoc); 
+      padding: 15px; 
+      margin: 20px 0; 
+      border-radius: 6px;
+    }
+
+    .info-encart h3 {
+      margin-top: 0; 
+      margin-bottom: 10px;
+      color: var(--rouge-spcoc);
+    }
+
+    /* BLOCS FLEX */
     .bloc-container {
       display: flex;
       justify-content: center;
       gap: 20px;
-      flex-wrap: wrap; /* Permet le retour à la ligne sur petit écran */
-      margin: 30px auto;
+      flex-wrap: wrap;
+      margin-top: 20px;
     }
     
     .bloc {
       background-color: #fff;
-      border: 1px solid var(--rouge-spcoc);
+      border: 1px solid #ddd;
+      border-top: 3px solid var(--rouge-spcoc);
       padding: 20px;
       border-radius: 8px;
       text-align: center;
-      flex: 1 1 300px; /* Largeur flexible, min 300px */
+      flex: 1 1 300px;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
-      max-width: 400px;
+      max-width: 450px;
     }
     
     .bloc h3 {
       color: var(--rouge-spcoc);
       margin-top: 0;
+      margin-bottom: 10px;
     }
     
     .bloc-inscription img {
-      max-width: 120px;
+      max-width: 110px;
       height: auto;
-      margin: 10px auto;
+      margin: 10px auto 0 auto;
       display: block;
     }
+
+    .bloc-contact a {
+      color: var(--rouge-spcoc);
+      font-weight: 600;
+      text-decoration: none;
+    }
     
-/* Impression */
-    /* Styles spécifiques à l'impression */
-@media print {
-  @page {
-    size: A4;
-    margin: 13mm;
-  }
-  main, table, .bloc {
-    box-shadow: none !important; /* ✅ pas d’ombres */
-  }
+    footer {
+      text-align: center;
+      margin: 30px 0;
+      color: #777;
+      font-size: 0.9em;
+    }
 
-  body {
-    background: white !important; /* ✅ fond 100% blanc */
-  }
+    /* TABLEAU RESPONSIVE (MOBILE) */
+    @media (max-width: 768px) {
+      header { flex-direction: column; height: auto; padding: 15px; text-align: center; gap: 5px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #fff; }
+      td { text-align: left; padding: 8px 5px; border: none; position: relative; width: 100% !important; }
+      td::before { content: attr(data-label) " : "; font-weight: 600; color: var(--rouge-spcoc); }
+    }
 
-  body {
-    background: white !important;
-    color: black;
-    font-size: 13.5px;
-    margin: 0;
-    line-height: 1.5;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
+    /* ==========================================
+       IMPÉRATIFS D'IMPRESSION (1 PAGE A4)
+       ========================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 8mm 8mm 5mm 8mm; /* Marges réduites pour tout faire tenir */
+      }
 
-  header {
-    margin-top: 8mm; /* marge haute ajustée */
-    margin-bottom: 1mm;
-    text-align: center;
-  }
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 11px; /* Légèrement plus petit pour compacter */
+        line-height: 1.3;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
 
-  header img {
-    max-height: 65px;
-    margin-right: 12px;
-    vertical-align: middle;
-  }
+      header {
+        height: 55px;
+        gap: 15px;
+        margin-bottom: 5px;
+      }
 
-  header h1 {
-    font-size: 1.7em;
-    margin: 0;
-    display: inline-block;
-    vertical-align: middle;
-  }
+      header img {
+        max-height: 45px;
+      }
 
-  main {
-    max-width: 100%;
-    margin: 0;
-    padding: 18px;
-  }
+      header h1 {
+        font-size: 1.4em;
+      }
 
-  table {
-    font-size: 12.5px;
-    margin: 20px 0;
-    border: 1px solid #ccc;
-    border-radius: 6px;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
+      main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none !important;
+      }
 
-  th, td {
-    padding: 9px 11px;
-  }
+      table {
+        font-size: 11px;
+        margin-top: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ddd;
+        box-shadow: none !important;
+      }
 
-  th {
-    background: var(--rouge-spcoc) !important;
-    color: white !important;
-    font-size: 1.05em;
-  }
+      th, td {
+        padding: 6px 8px; /* Compactage des lignes du tableau */
+      }
 
-  /* ⚡ Forcer les blocs à rester côte à côte */
-  .bloc-container {
-    display: table !important;
-    width: 100%;
-    table-layout: fixed;
-    margin: 15px 0;
-    border-spacing: 15px;
-  }
+      th {
+        background: var(--rouge-spcoc) !important;
+        color: white !important;
+      }
 
-  .bloc {
-    display: table-cell !important;
-    width: 50%;
-    vertical-align: top;
-    padding: 16px;
-    font-size: 12.5px;
-    border: 1px solid var(--rouge-spcoc);
-    border-radius: 8px;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-  }
+      .info-encart {
+        margin: 10px 0;
+        padding: 10px;
+        font-size: 10.5px;
+        box-shadow: none !important;
+      }
+      
+      .info-encart h3 {
+        margin-bottom: 5px;
+      }
 
-  .bloc h3 {
-    font-size: 1.2em;
-    margin: 10px 0;
-    color: var(--rouge-spcoc);
-  }
+      /* Forcer la disposition côte à côte en impression sans flex */
+      .bloc-container {
+        display: table !important;
+        width: 100%;
+        table-layout: fixed;
+        margin-top: 10px;
+        gap: 0;
+      }
 
-  .bloc-inscription img {
-    max-width: 100px;
-    margin-top: 8px;
-  }
+      .bloc {
+        display: table-cell !important;
+        width: 50%;
+        vertical-align: top;
+        padding: 10px;
+        font-size: 10.5px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        box-shadow: none !important;
+      }
+      
+      .bloc:first-child {
+        border-right: 5px solid white; /* Simule un espace entre les deux blocs */
+      }
 
-  .info-encart {
-    background-color: #fff3f3 !important;
-    border-left: 5px solid var(--rouge-spcoc) !important;
-    padding: 15px;
-    margin: 25px 0;
-    -webkit-print-color-adjust: exact !important;
-    print-color-adjust: exact !important;
-    page-break-inside: avoid;
-  }
+      .bloc h3 {
+        font-size: 1.1em;
+        margin-bottom: 5px;
+      }
 
-  footer {
-    margin-top: 25px;
-    font-size: 11.5px;
-    text-align: center;
-  }
-}
+      .bloc-inscription img {
+        max-width: 75px; /* Réduction du QR code à l'impression */
+        margin-top: 5px;
+      }
+
+      footer {
+        margin-top: 10px;
+        font-size: 9px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -350,7 +337,7 @@
             <b>Convention US Cagnes</b><br>
             <b>Lundi 18h00-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
             <b>Mercredi 16h00-17h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
-            <b>Jeudi 18h00-19h30</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
+            <b>Jeudi 18h00-19h30</b> Gymnase Colette Besson (Cagnes sur Mer)
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -370,7 +357,7 @@
             <b>Convention US Cagnes</b><br>
             <b>Mardi 17h45-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
             <b>Mercredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
-            <b>Vendredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
+            <b>Vendredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -401,39 +388,27 @@
       </tbody>
     </table>
 
-    <!-- Encart École d'arbitrage -->
-    <div style="background-color: #fff3f3; border-left: 5px solid var(--rouge-spcoc); padding: 15px; margin: 20px 0; border-radius: 6px;">
-      <h3 style="margin-top: 0; color: var(--rouge-spcoc);">
-        Informations diverses
-      </h3>
-      <p style="margin: 0;">
+    <div class="info-encart">
+      <h3>Informations diverses</h3>
+      <ul>
         <li>Les cours d'essai sont possibles pendant le mois de septembre.</li>
         <li>Reprise des entraînements la semaine du <strong>lundi 7 septembre 2026</strong>.</li>
         <li>La cotisation comprend : la licence FFHB ainsi que la tenue du SPCOC Handball (pour les catégories U9, U11, U13 et U15).</li>
-        <li><strong>Ecole d'arbitrage</strong> à partir de la catégorie U11.</li>
-      </p>
+        <li><strong>École d'arbitrage</strong> à partir de la catégorie U11.</li>
+      </ul>
     </div>
 
-    <!-- Conteneur flex -->
     <div class="bloc-container">
-      <!-- Bloc Inscription compact -->
       <div class="bloc bloc-inscription">
-        <h3>
-          📝 Inscription
-        </h3>
-        <p>
-          Scannez le QR code ci-dessous pour accéder au formulaire :
-        </p>
+        <h3>📝 Inscription</h3>
+        <p>Scannez le QR code ci-dessous pour accéder au formulaire :</p>
         <img src="qr_code_inscription.png" alt="QR Code inscription">
       </div>
       
-      <!-- Encart Contact -->
       <div class="bloc bloc-contact">
-        <h3>
-          📬 Contactez-nous
-        </h3>
+        <h3>📬 Contactez-nous</h3>
         <p>
-          Une question ? Besoin d'informations ? <br>
+          Une question ? Besoin d'informations ?<br>
           Vous pouvez nous contacter en nous écrivant par email :<br><br>
           <a href="mailto:handball.spcoc@gmail.com">handball.spcoc@gmail.com</a>
         </p>
@@ -443,7 +418,7 @@
   </main>
 
   <footer>
-    © 2025 SPCOC Handball – Tous droits réservés.
+    © 2026 SPCOC Handball – Tous droits réservés.
   </footer>
 
 </body>
