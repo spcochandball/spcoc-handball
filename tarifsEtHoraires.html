@@ -103,19 +103,21 @@
     td[data-label="Horaires et Lieux"] { width: 55%; text-align: left; }
     td[data-label="Tarif"] { width: 15%; font-weight: 600; color: var(--rouge-spcoc); }
 
-    /* BADGE CONVENTION (Méthode 1) */
+    /* BADGE CONVENTION CENTRÉ */
     .badge-convention {
-      display: inline-block;
+      display: block; /* Passe en bloc pour occuper toute la largeur */
+      text-align: center; /* Centre le texte à l'intérieur */
       background-color: #fff0f0;
       color: var(--rouge-spcoc);
       border: 1px solid var(--rouge-spcoc);
-      padding: 2px 8px;
+      padding: 3px 8px;
       border-radius: 4px;
       font-size: 0.82em;
       font-weight: 600;
       text-transform: uppercase;
       letter-spacing: 0.5px;
-      margin-bottom: 6px;
+      margin: 0 auto 8px auto; /* Centre le bloc lui-même et ajoute un espace en dessous */
+      max-width: 220px; /* Limite la largeur pour garder l'effet badge */
     }
 
     ul {
@@ -196,7 +198,7 @@
       tr { margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #fff; }
       td { text-align: left; padding: 8px 5px; border: none; position: relative; width: 100% !important; }
       td::before { content: attr(data-label) " : "; font-weight: 600; color: var(--rouge-spcoc); }
-      .badge-convention { margin-top: 5px; }
+      .badge-convention { margin: 5px 0; max-width: 100%; text-align: left; border: none; background: none; color: var(--rouge-spcoc); padding: 0; }
     }
 
     /* ==========================================
@@ -248,7 +250,7 @@
       }
 
       th, td {
-        padding: 9px 8px; /* Tableau préservé et aéré */
+        padding: 9px 8px;
       }
 
       th {
@@ -256,14 +258,15 @@
         color: white !important;
       }
 
-      /* Style du badge à l'impression */
+      /* Style du badge centré à l'impression */
       .badge-convention {
         background-color: #fff0f0 !important;
         border: 1px solid var(--rouge-spcoc) !important;
         color: var(--rouge-spcoc) !important;
         font-size: 0.8em;
-        padding: 1px 6px;
-        margin-bottom: 4px;
+        padding: 2px 6px;
+        margin: 0 auto 5px auto;
+        max-width: 180px;
       }
 
       .info-encart {
@@ -368,7 +371,7 @@
           <td data-label="Catégorie">U13 F</td>
           <td data-label="Années">2014-2015</td>
           <td data-label="Horaires et Lieux">
-            <span class="badge-convention">Convention US Cagnes</span><br>
+            <span class="badge-convention">Convention US Cagnes</span>
             <b>Lundi 18h00-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
             <b>Mercredi 16h00-17h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
             <b>Jeudi 18h00-19h30</b> Gymnase Colette Besson (Cagnes sur Mer)
@@ -388,7 +391,7 @@
           <td data-label="Catégorie">U15 F</td>
           <td data-label="Années">2012-2013</td>
           <td data-label="Horaires et Lieux">
-            <span class="badge-convention">Convention US Cagnes</span><br>
+            <span class="badge-convention">Convention US Cagnes</span>
             <b>Mardi 17h45-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
             <b>Mercredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
             <b>Vendredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)
@@ -422,6 +425,7 @@
       </tbody>
     </table>
 
+    <!-- Encart Informations -->
     <div class="info-encart">
       <h3>Informations diverses</h3>
       <ul>
@@ -432,13 +436,16 @@
       </ul>
     </div>
 
+    <!-- Conteneur Blocs -->
     <div class="bloc-container">
+      <!-- Inscription -->
       <div class="bloc bloc-inscription">
         <h3>📝 Inscription</h3>
         <p>Scannez le QR code pour accéder au formulaire :</p>
         <img src="qr_code_inscription.png" alt="QR Code inscription">
       </div>
       
+      <!-- Contact -->
       <div class="bloc bloc-contact">
         <h3>📬 Contactez-nous</h3>
         <p>
