@@ -21,35 +21,33 @@
     header {
       background-color: white;
       color: var(--rouge-spcoc);
-      height: 80px;
+      height: 90px;
       display: flex;
       align-items: center;
       justify-content: center;
-      position: relative;
+      gap: 20px;
       border-bottom: 3px solid var(--rouge-spcoc);
     }
 
     header img {
-      position: absolute;
-      left: 20px;
-      max-height: 60px;
+      max-height: 70px;
       height: auto;
       width: auto;
     }
 
     header h1 {
       margin: 0;
-      font-size: 2em;
+      font-size: 1.8em;
       color: var(--rouge-spcoc);
     }
 
     main {
-      max-width: 900px;
-      margin: 30px auto;
+      max-width: 950px;
+      margin: 20px auto;
       background-color: white;
       padding: 20px;
       border-radius: 8px;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     }
 
     /* TABLEAU STYLISÉ */
@@ -57,21 +55,21 @@
       width: 100%;
       border-collapse: separate;
       border-spacing: 0;
-      margin-top: 20px;
+      margin-top: 10px;
       border-radius: 8px;
       overflow: hidden;
       box-shadow: 0 2px 6px rgba(0,0,0,0.05);
     }
 
     th, td {
-      padding: 14px 12px;
+      padding: 12px 10px;
       text-align: center;
     }
 
     th {
       background: var(--rouge-spcoc);
       color: white;
-      font-size: 1em;
+      font-size: 0.95em;
       text-transform: uppercase;
       letter-spacing: 0.5px;
     }
@@ -86,7 +84,7 @@
 
     tbody tr:hover {
       background-color: #ffecec;
-      transition: background-color 0.2s ease-in-out;
+      transition: background-color 0.1s ease-in-out;
     }
 
     td {
@@ -99,50 +97,289 @@
       color: var(--black);
     }
 
-    /* Colonnes mieux équilibrées */
+    /* Colonnes équilibrées */
     td[data-label="Catégorie"] { width: 15%; font-weight: 600; }
     td[data-label="Années"] { width: 15%; }
-    td[data-label="Horaires et Lieux"] { width: 50%; text-align: left; }
-    td[data-label="Tarif"] { width: 20%; font-weight: 600; color: var(--rouge-spcoc); }
+    td[data-label="Horaires et Lieux"] { width: 55%; text-align: left; }
+    td[data-label="Tarif"] { width: 15%; font-weight: 600; color: var(--rouge-spcoc); }
 
+    /* BADGES CONVENTION CENTRÉS (ÉCRAN) */
+    .badge-convention {
+      display: block;
+      text-align: center;
+      background-color: #f0f2ff; /* Fond bleu très clair */
+      color: #000066; /* Bleu marine officiel US Cagnes */
+      border: 1px solid #000066; /* Bordure bleu marine */
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.82em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 auto 8px auto;
+      max-width: 220px;
+    }
+
+    .badge-convention-colle {
+      display: block;
+      text-align: center;
+      background-color: #fff0f0;
+      color: var(--rouge-spcoc);
+      border: 1px solid var(--rouge-spcoc);
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.82em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 auto 8px auto;
+      max-width: 220px;
+    }
+
+    .badge-convention-vence {
+      display: block;
+      text-align: center;
+      background-color: #fffde6; /* Jaune très doux pour le fond */
+      color: #2c3272;            /* Bleu/violet officiel de Vence */
+      border: 1px solid #2c3272; /* Bordure assortie */
+      padding: 3px 8px;
+      border-radius: 4px;
+      font-size: 0.82em;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 0 auto 8px auto;
+      max-width: 220px;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 5px;
+    }
+
+    /* ENCART INFORMATIONS DIVERSES */
+    .info-encart {
+      background-color: #fff3f3; 
+      border-left: 5px solid var(--rouge-spcoc); 
+      padding: 15px; 
+      margin: 35px 0; /* Augmentation de la marge (haut/bas) sur écran */
+      border-radius: 6px;
+    }
+
+    .info-encart h3 {
+      margin-top: 0; 
+      margin-bottom: 10px;
+      color: var(--rouge-spcoc);
+    }
+
+    /* BLOCS FLEX */
+    .bloc-container {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      margin-top: 20px;
+    }
+    
+    .bloc {
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-top: 3px solid var(--rouge-spcoc);
+      padding: 20px;
+      border-radius: 8px;
+      text-align: center;
+      flex: 1 1 300px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      max-width: 450px;
+    }
+    
+    .bloc h3 {
+      color: var(--rouge-spcoc);
+      margin-top: 0;
+      margin-bottom: 10px;
+    }
+    
+    .bloc-inscription img {
+      max-width: 110px;
+      height: auto;
+      margin: 10px auto 0 auto;
+      display: block;
+    }
+
+    .bloc-contact a {
+      color: var(--rouge-spcoc);
+      font-weight: 600;
+      text-decoration: none;
+    }
+    
     footer {
       text-align: center;
-      margin-top: 40px;
+      margin: 30px 0;
       color: #777;
       font-size: 0.9em;
     }
 
-    /* TABLEAU RESPONSIVE */
+    /* TABLEAU RESPONSIVE (MOBILE) */
     @media (max-width: 768px) {
-      table, thead, tbody, th, td, tr {
-        display: block;
+      header { flex-direction: column; height: auto; padding: 15px; text-align: center; gap: 5px; }
+      table, thead, tbody, th, td, tr { display: block; }
+      thead { display: none; }
+      tr { margin-bottom: 15px; border: 1px solid #ccc; border-radius: 8px; padding: 10px; background-color: #fff; }
+      td { text-align: left; padding: 8px 5px; border: none; position: relative; width: 100% !important; }
+      td::before { content: attr(data-label) " : "; font-weight: 600; color: var(--rouge-spcoc); }
+      .badge-convention, .badge-convention-colle, .badge-convention-vence { margin: 5px 0; max-width: 100%; text-align: left; border: none; background: none; padding: 0; }
+    }
+
+    /* ==========================================
+       IMPÉRATIFS D'IMPRESSION (AVEC TABLEAU AÉRÉ)
+       ========================================== */
+    @media print {
+      @page {
+        size: A4 portrait;
+        margin: 6mm 8mm 4mm 8mm;
       }
 
-      thead {
-        display: none;
+      body {
+        background: white !important;
+        color: black !important;
+        font-size: 11.5px;
+        line-height: 1.35;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
       }
 
-      tr {
-        margin-bottom: 15px;
+      header {
+        height: 40px;
+        gap: 10px;
+        margin-bottom: 2px;
+        border-bottom: 2px solid var(--rouge-spcoc);
+      }
+
+      header img {
+        max-height: 32px;
+      }
+
+      header h1 {
+        font-size: 1.25em;
+      }
+
+      main {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+        box-shadow: none !important;
+      }
+
+      table {
+        font-size: 11.5px;
+        margin-top: 18px;
+        margin-bottom: 8px;
+        border: 1px solid #ddd;
+        box-shadow: none !important;
+      }
+
+      th, td {
+        padding: 9px 8px;
+      }
+
+      th {
+        background: var(--rouge-spcoc) !important;
+        color: white !important;
+      }
+
+      /* STRUCTURE DES BADGES FORCÉE POUR L'IMPRESSION COULEUR */
+      .badge-convention, .badge-convention-colle, .badge-convention-vence {
+        display: block !important;
+        font-size: 0.8em;
+        padding: 2px 6px;
+        margin: 0 auto 5px auto;
+        max-width: 180px;
+        text-align: center !important;
+        -webkit-print-color-adjust: exact !important; /* Force le rendu de la couleur sur Webkit/Chrome/Safari */
+        print-color-adjust: exact !important;         /* Force le rendu standard */
+      }
+
+      .badge-convention {
+        background-color: #f0f2ff !important;
+        border: 1px solid #000066 !important;
+        color: #000066 !important;
+      }
+
+      .badge-convention-colle {
+        background-color: #fff0f0 !important;
+        border: 1px solid var(--rouge-spcoc) !important;
+        color: var(--rouge-spcoc) !important;
+      }
+
+      .badge-convention-vence {
+        background-color: #fffde6 !important;
+        border: 1px solid #2c3272 !important;
+        color: #2c3272 !important;
+      }
+
+      /* AUGMENTATION DE LA MARGE DU BLOC INFO À L'IMPRESSION */
+      .info-encart {
+        margin: 15px 0; /* Plus d'espace sous le tableau et au-dessus des blocs */
+        padding: 8px 12px;
+        font-size: 10px;
+        box-shadow: none !important;
+        background-color: #fff3f3 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      
+      .info-encart h3 {
+        margin-bottom: 3px;
+        font-size: 1.1em;
+      }
+      
+      .info-encart li {
+        margin-bottom: 2px;
+      }
+
+      .bloc-container {
+        display: table !important;
+        width: 100%;
+        table-layout: fixed;
+        margin-top: 6px;
+      }
+
+      .bloc {
+        display: table-cell !important;
+        width: 50%;
+        vertical-align: top;
+        padding: 8px;
+        font-size: 10px;
         border: 1px solid #ccc;
-        border-radius: 8px;
-        padding: 10px;
-        background-color: #fff;
+        border-radius: 6px;
+        box-shadow: none !important;
+      }
+      
+      .bloc:first-child {
+        border-right: 6px solid white;
       }
 
-      td {
-        text-align: left;
-        padding: 10px;
-        border: none;
-        position: relative;
+      .bloc h3 {
+        font-size: 1.05em;
+        margin-bottom: 3px;
       }
 
-      td::before {
-        content: attr(data-label);
-        font-weight: 600;
-        display: block;
-        margin-bottom: 5px;
-        color: var(--rouge-spcoc);
+      .bloc p {
+        margin: 2px 0;
+      }
+
+      .bloc-inscription img {
+        max-width: 60px;
+        margin-top: 3px;
+      }
+
+      footer {
+        margin-top: 5px;
+        font-size: 8.5px;
       }
     }
   </style>
@@ -169,10 +406,10 @@
           <td data-label="Catégorie">Baby</td>
           <td data-label="Années">2021-2024</td>
           <td data-label="Horaires et Lieux"><b>Samedi 9h00-9h45</b> – Gymnase La Colle</td>
-          <td data-label="Tarif">140 €</td>
+          <td data-label="Tarif">150 €</td>
         </tr>
         <tr>
-          <td data-label="Catégorie">U9</td>
+          <td data-label="Catégorie">U9 F/G</td>
           <td data-label="Années">2018-2020</td>
           <td data-label="Horaires et Lieux"><b>Samedi 9h30-10h45</b> – Gymnase La Colle</td>
           <td data-label="Tarif">170 €</td>
@@ -187,13 +424,13 @@
           <td data-label="Tarif">190 €</td>
         </tr>
         <tr>
-          <td data-label="Catégorie">U13 F Convention US Cagnes</td>
+          <td data-label="Catégorie">U13 F</td>
           <td data-label="Années">2014-2015</td>
           <td data-label="Horaires et Lieux">
-            <b>Équipe 1 & 2 : Lundi 17h45-19h15</b> – Gymnase Besson<br>
-            <b>Équipe 1 : Mercredi 15h-16h30</b> – Gymnase Sauvaigo<br>
-            <b>Équipe 2 : Mercredi 18h-19h30</b> – Gymnase Vence<br>
-            <b>Équipe 1 & 2 : Vendredi 17h45-19h15</b> – Gymnase Besson
+            <span class="badge-convention">Convention US Cagnes</span>
+            <b>Lundi 18h00-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
+            <b>Mercredi 16h00-17h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
+            <b>Jeudi 18h00-19h30</b> Gymnase Colette Besson (Cagnes sur Mer)
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -201,21 +438,20 @@
           <td data-label="Catégorie">U13 G</td>
           <td data-label="Années">2014-2015</td>
           <td data-label="Horaires et Lieux">
-            <b>Mardi 18h30-19h45</b> – Gymnase La Colle<br>
+            <span class="badge-convention-colle">Convention La Colle/Vence</span>
+            <b>Mardi 18h30-20h00</b> – Gymnase La Colle<br>
             <b>Jeudi 18h30-19h45</b> – Gymnase Vence
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
         <tr>
-          <td data-label="Catégorie">U15 F Convention US Cagnes</td>
+          <td data-label="Catégorie">U15 F</td>
           <td data-label="Années">2012-2013</td>
           <td data-label="Horaires et Lieux">
-            <b>Équipe 1 : Lundi 19h15-20h30</b> – Gymnase Besson<br>
-            <b>Équipe 1 : Mercredi 18h-19h30</b> – Gymnase Sauvaigo<br>
-            <b>Équipe 1 : Vendredi 19h-20h30</b> – Gymnase Sauvaigo<br>
-            <b>Équipe 2 : Lundi 17h45-19h15</b> – Gymnase Besson<br>
-            <b>Équipe 2 : Mercredi 18h-19h30</b> – Gymnase Vence<br>
-            <b>Équipe 2 : Vendredi 17h45-19h15</b> – Gymnase Besson
+            <span class="badge-convention">Convention US Cagnes</span>
+            <b>Mardi 17h45-19h15</b> Gymnase Colette Besson (Cagnes sur Mer)<br>
+            <b>Mercredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)<br>
+            <b>Vendredi 19h00-20h30</b> Gymnase Sauvaigo (Cagnes sur Mer)
           </td>
           <td data-label="Tarif">190 €</td>
         </tr>
@@ -223,7 +459,18 @@
           <td data-label="Catégorie">U15 G</td>
           <td data-label="Années">2012-2013</td>
           <td data-label="Horaires et Lieux">
-            <b>Lundi 17h30-19h</b> – Gymnase Pierre Sauvaigo Cagnes sur Mer<br>
+            <span class="badge-convention-vence">Convention Vence/La Colle/Le Cros</span>
+            <b>Mardi 18h15-19h30</b> – Gymnase Vence<br>
+            <b>Mercredi 19h15-20h45</b> – Gymnase Vence
+          </td>
+          <td data-label="Tarif">190 €</td>
+        </tr>
+        <tr>
+          <td data-label="Catégorie">U18 G</td>
+          <td data-label="Années">2009-2011</td>
+          <td data-label="Horaires et Lieux">
+            <span class="badge-convention-vence">Convention Vence/La Colle/Le Cros</span>
+            <b>Mardi 18h15-19h30</b> – Gymnase Vence<br>
             <b>Mercredi 19h15-20h45</b> – Gymnase Vence
           </td>
           <td data-label="Tarif">190 €</td>
@@ -237,32 +484,44 @@
       </tbody>
     </table>
 
-    <!-- Encart École d'arbitrage -->
-    <div style="background-color: #fff3f3; border-left: 5px solid var(--rouge-spcoc); padding: 15px; margin: 20px 0; border-radius: 6px;">
-    <h3 style="margin-top: 0; color: var(--rouge-spcoc);">
-        Informations diverses
-      </h3>
-      <p style="margin: 0;">
+    <!-- Encart Informations -->
+    <div class="info-encart">
+      <h3>Informations diverses</h3>
+      <ul>
         <li>Les cours d'essai sont possibles pendant le mois de septembre.</li>
-        <li>Pour les catégories <strong>U11, U13 et U15</strong>, reprise des entraînements le <strong>mardi 8 septembre 2026</strong>.</li>
-        <li>Pour le <strong>Baby Hand et les U9</strong>, reprise des entraînements le <strong>samedi 12 septembre 2026</strong>.</li>
+        <li>Reprise des entraînements la semaine du <strong>lundi 7 septembre 2026</strong>.</li>
         <li>La cotisation comprend : la licence FFHB ainsi que la tenue du SPCOC Handball (pour les catégories U9, U11, U13 et U15).</li>
-        <li><strong>Ecole d'arbitrage</strong> à partir de la catégorie U11.</li>
-      </p>
+        <li><strong>École d'arbitrage</strong> à partir de la catégorie U11.</li>
+      </ul>
     </div>
 
-    <!-- Bloc Inscription -->
-    <div style="background-color: #fefefe; border: 2px dashed var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,0.05); max-width: 600px;">
-      <h3 style="color: var(--rouge-spcoc); font-size: 1.4em; margin-top: 0;">
-        📝 Inscription
-      </h3>
-      <p style="font-size: 1em; color: #444; margin-bottom: 15px;">
-        Cliquez sur le lien ci-dessous pour accéder directement au formulaire d'inscription :
-      </p>
-      <a href="https://forms.gle/XpHeq2KhJVqB1qFq5" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--rouge-spcoc); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
+    <!-- Conteneur Blocs -->
+    <div class="bloc-container">
+      <!-- Inscription -->
+      <div class="bloc bloc-inscription">
+        <h3>📝 Inscription</h3>
+        <p>Cliquez sur le lien ci-dessous pour accéder directement au formulaire d'inscription :</p>
+      <a href="https://forms.gle/UnGtD1Qww2oxyGd98" target="_blank" style="display: inline-block; margin-top: 15px; padding: 10px 20px; background: var(--rouge-spcoc); color: #fff; border-radius: 8px; text-decoration: none; font-weight: 600;">
         Remplir le formulaire en ligne
       </a>
+      </div>
+      
+      <!-- Contact -->
+      <div class="bloc bloc-contact">
+        <h3>📬 Contactez-nous</h3>
+        <p>
+          Une question ?<br>
+          Écrivez-nous par email :<br>
+          <a href="mailto:handball.spcoc@gmail.com">handball.spcoc@gmail.com</a>
+        </p>
+      </div>
     </div>
+    
+  </main>
 
-    <!-- Encart Contact -->
-    <div style="background-color: #ffffff; border: 2px solid var(--rouge-spcoc); padding: 20px; margin: 30px auto; border-radius: 10px; text-align: center; box-shadow: 0 2px 6px rgba(0,0,0,
+  <footer>
+    © 2026 SPCOC Handball – Tous droits réservés.
+  </footer>
+
+</body>
+</html>
